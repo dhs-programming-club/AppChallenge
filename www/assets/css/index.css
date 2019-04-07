@@ -5,6 +5,22 @@
 
 /* Id's */
 
+#output{
+	
+	position: absolute;
+	
+	width: 100vw;
+	
+	text-align: center;
+	
+	top: 50vh;
+	
+	margin-top: -50px;
+	
+	font-size: 50px;
+	
+}
+
 /* Classes */
 
 /* Tags */
