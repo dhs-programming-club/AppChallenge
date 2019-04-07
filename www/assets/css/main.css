@@ -1,0 +1,40 @@
+
+/* Fonts */
+
+@font-face{
+	
+	url: src("fonts/Roboto-Light.ttf");
+	
+	font-family: roboto;
+	
+}
+
+/* Normal View */
+
+/* Id's */
+
+/* Classes */
+
+/* Tags */
+
+/* Other */
+
+*{
+	
+	font-family: roboto;
+	
+}
+
+/* Mobile View */
+
+@media only screen and (max-width: 600px){
+	
+	/* Id's */
+	
+	/* Classes */
+	
+	/* Tags */
+	
+	/* Other */
+	
+}
