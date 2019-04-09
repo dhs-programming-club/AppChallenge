@@ -21,7 +21,69 @@
 	
 }
 
+#microphoneButton{
+	
+	position: absolute;
+	
+	top: 75vh;
+	
+	left: 50vw;
+	
+	margin-top: -25px;
+	
+	margin-left: -25px;
+	
+	background: rgb(0, 0, 0, 0);
+	
+	padding: 0px;
+	
+	border: none;
+	
+	font-size: 50px;
+	
+	transition: 0.5s;
+	
+}
+
+#microphoneButton:active{
+	
+	opacity: 0.5;
+	
+}
+
+#microphoneButton:focus {
+	
+	outline: 0;
+	
+}
+
+#microphoneButton::-moz-focus-inner {
+  
+  border: 0;
+  
+}
+
+#microphoneError{
+	
+	position: absolute;
+	
+	width: 100vw;
+	
+	text-align: center;
+	
+	top: 76vh;
+	
+	font-size: 25px;
+	
+}
+
 /* Classes */
+
+.activeMicrophone{
+	
+	color: #dd222b;
+	
+}
 
 /* Tags */
 
