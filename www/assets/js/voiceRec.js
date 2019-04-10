@@ -63,7 +63,7 @@ window.addEventListener("load", function setupVoiceRecognition(){
 
 			recognition.interimResults = false;
 
-			recognition.onresult = function(event) {
+			recognition.onresult = async function(event) {
 				
 				document.getElementById("microphoneButton").className = "";
 				
@@ -71,9 +71,15 @@ window.addEventListener("load", function setupVoiceRecognition(){
 				
 				var command = event.results[last][0].transcript;
 				
-				document.getElementById("output").innerHTML = command;
+				words = convertToArray(command);
 				
-				console.log(command);
+				for(var i = 0; i < words.length; i++){
+					
+					sleep(500);
+					
+					document.getElementById("output").innerHTML = words[i];
+					
+				}
 				
 			};
 
