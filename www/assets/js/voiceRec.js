@@ -75,7 +75,7 @@ window.addEventListener("load", function setupVoiceRecognition(){
 				
 				for(var i = 0; i < words.length; i++){
 					
-					sleep(500);
+					await sleep(500);
 					
 					document.getElementById("output").innerHTML = words[i];
 					
