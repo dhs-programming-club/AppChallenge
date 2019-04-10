@@ -71,9 +71,9 @@ window.addEventListener("load", function setupVoiceRecognition(){
 				
 				var command = event.results[last][0].transcript;
 				
-				document.getElementById("output").value = command;
+				document.getElementById("output").innerHTML = command;
 				
-				respond();
+				console.log(command);
 				
 			};
 
