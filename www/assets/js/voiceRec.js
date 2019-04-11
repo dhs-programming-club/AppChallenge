@@ -1,7 +1,7 @@
 
 var inCordova = false;
 
-var wordDelay = 100;
+var wordDelay = 200;
 
 document.addEventListener("deviceready", function(){
 	
@@ -19,17 +19,19 @@ window.addEventListener("load", function setupVoiceRecognition(){
 				
 				if(available){
 					
-					window.plugins.speechRecognition.startListening(function(result){
+					window.plugins.speechRecognition.startListening(async function(result){
 						
 						words = convertToArray(result);
 						
 						for(var i = 0; i < words.length; i++){
 							
-							await sleep(wordDelay);
-							
 							document.getElementById("output").innerHTML = words[i];
 							
+							await sleep(wordDelay);
+							
 						}
+						
+						document.getElementById("output").innerHTML = "";
 						
 					}, function(err){
 						
@@ -85,11 +87,13 @@ window.addEventListener("load", function setupVoiceRecognition(){
 				
 				for(var i = 0; i < words.length; i++){
 					
-					await sleep(wordDelay);
-					
 					document.getElementById("output").innerHTML = words[i];
 					
+					await sleep(wordDelay);
+					
 				}
+				
+				document.getElementById("output").innerHTML = "";
 				
 			};
 
