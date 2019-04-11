@@ -1,6 +1,8 @@
 
 var inCordova = false;
 
+var wordDelay = 100;
+
 document.addEventListener("deviceready", function(){
 	
 	inCordova = true;
@@ -19,7 +21,15 @@ window.addEventListener("load", function setupVoiceRecognition(){
 					
 					window.plugins.speechRecognition.startListening(function(result){
 						
-						document.getElementById("microphoneButton").innerHTML = result;
+						words = convertToArray(result);
+						
+						for(var i = 0; i < words.length; i++){
+							
+							await sleep(wordDelay);
+							
+							document.getElementById("output").innerHTML = words[i];
+							
+						}
 						
 					}, function(err){
 						
@@ -75,7 +85,7 @@ window.addEventListener("load", function setupVoiceRecognition(){
 				
 				for(var i = 0; i < words.length; i++){
 					
-					await sleep(500);
+					await sleep(wordDelay);
 					
 					document.getElementById("output").innerHTML = words[i];
 					
