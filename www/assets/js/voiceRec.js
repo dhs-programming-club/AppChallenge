@@ -1,7 +1,7 @@
 
 var inCordova = false;
 
-var wordDelay = 200;
+var wordDelay = parseInt(localStorage.getItem("wordDelay"));
 
 document.addEventListener("deviceready", function(){
 	

@@ -27,6 +27,7 @@
 <script src="assets/js/index.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/voiceRec.js"></script>
+<script src="assets/js/memory.js"></script>
 
 <!-- CSS -->
 
@@ -44,7 +45,9 @@
 	
 	<p id="output"></p>
 	
-	<!--<input type="number" min="100" max="2000" placeholder="Delay between words (in milliseconds)" id="delayInput"></input>-->
+	<input type="range" min="100" max="2000" id="delayInput" class="slider" onmouseover="refreshDelay();"></input>
+	
+	<p id="delayPreview"></p>
 	
 </body>
 
