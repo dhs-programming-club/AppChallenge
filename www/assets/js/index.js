@@ -22,25 +22,49 @@ function refreshDelay(){
 
 function delayUp(){
 	
-	console.log(1);
-	
-	localStorage.setItem("wordDelay", parseInt(localStorage.getItem("wordDelay")) + 1);
-	
-	document.getElementById("delayPreview").innerHTML = parseInt(localStorage.getItem("wordDelay"));
-	
-	document.getElementById("delayInput").value = localStorage.getItem("wordDelay");
+	if(parseInt(localStorage.getItem("wordDelay")) != document.getElementById("delayInput").max){
+		
+		localStorage.setItem("wordDelay", parseInt(localStorage.getItem("wordDelay")) + 1);
+		
+		document.getElementById("delayPreview").innerHTML = parseInt(localStorage.getItem("wordDelay"));
+		
+		document.getElementById("delayInput").value = localStorage.getItem("wordDelay");
+		
+	}
 	
 }
 
 function delayDown(){
 	
-	console.log(2);
+	if(parseInt(localStorage.getItem("wordDelay")) != document.getElementById("delayInput").min){
+		
+		localStorage.setItem("wordDelay", parseInt(localStorage.getItem("wordDelay")) - 1);
+		
+		document.getElementById("delayPreview").innerHTML = parseInt(localStorage.getItem("wordDelay"));
+		
+		document.getElementById("delayInput").value = localStorage.getItem("wordDelay");
+		
+	}
 	
-	localStorage.setItem("wordDelay", parseInt(localStorage.getItem("wordDelay")) - 1);
+}
+
+function openMenu(){
 	
-	document.getElementById("delayPreview").innerHTML = parseInt(localStorage.getItem("wordDelay"));
+	if(document.getElementById("sideMenu").offsetWidth == 0){
+		
+		document.getElementById("sideMenu").style.width = "200px";
+		
+	}
 	
-	document.getElementById("delayInput").value = localStorage.getItem("wordDelay");
+}
+
+function closeMenu(){
+	
+	if(document.getElementById("sideMenu").offsetWidth != 0){
+		
+		document.getElementById("sideMenu").style.width = "0px";
+		
+	}
 	
 }
 

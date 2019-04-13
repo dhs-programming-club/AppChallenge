@@ -45,15 +45,23 @@
 	
 	<p id="output"></p>
 	
-	<input type="range" min="100" max="2000" id="delayInput" class="slider" onchange="refreshDelay();"></input>
+	<button id="menuButton" onclick="openMenu();"><i class="fa fa-bars"></i></button>
 	
-	<p id="delayPreview"></p>
-	
-	<button id="delayUp" class="delayButton" onclick="delayUp();"><i class="fa fa-arrow-up"></i></button>
-	
-	<button id="delayDown" class="delayButton" onclick="delayDown();"><i class="fa fa-arrow-down"></i></button>
-	
-	<p id="delayTitle">Delay between words (in miliseconds)</p>
+	<nav id="sideMenu">
+		
+		<input type="range" min="100" max="2000" id="delayInput" class="slider" onchange="refreshDelay();"></input>
+		
+		<p id="delayPreview"></p>
+		
+		<button id="delayUp" class="delayButton" onclick="delayUp();"><i class="fa fa-arrow-up"></i></button>
+		
+		<button id="delayDown" class="delayButton" onclick="delayDown();"><i class="fa fa-arrow-down"></i></button>
+		
+		<p id="delayTitle">Delay between words (in miliseconds)</p>
+		
+		<button id="menuClose" onclick="closeMenu();"><i class="fa fa-times"></i></button>
+		
+	</nav>
 	
 </body>
 
