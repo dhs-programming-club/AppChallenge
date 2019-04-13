@@ -33,12 +33,6 @@
 	
 	margin-left: -25px;
 	
-	background: rgb(0, 0, 0, 0);
-	
-	padding: 0px;
-	
-	border: none;
-	
 	font-size: 50px;
 	
 	transition: 0.5s;
@@ -87,9 +81,9 @@
 	
 	width: 300px;
 	
-	margin-right: -100px;
+	margin-right: -50px;
 	
-	transform: rotate(90deg);
+	transform: rotate(270deg);
 	
 }
 
@@ -109,7 +103,49 @@
 
 #delayPreview{
 	
+	font-size: 25px;
 	
+	position: absolute;
+	
+	top: 50vh;
+	
+	margin-top: 175px;
+	
+	right: 70px;
+	
+	width: 56px;
+	
+	text-align: center;
+	
+}
+
+#delayTitle{
+	
+	font-size: 15px;
+	
+	position: absolute;
+	
+	top: 50vh;
+	
+	margin-top: -190px;
+	
+	right: 20px;
+	
+	width: 156px;
+	
+	text-align: center;
+	
+}
+
+#delayUp{
+	
+	margin-top: -100px;
+	
+}
+
+#delayDown{
+	
+	margin-top: 40px;
 	
 }
 
@@ -122,33 +158,51 @@
 }
 
 .slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 15px;
-  border-radius: 5px;   
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+	
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	border-radius: 5px;   
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	
 }
 
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%; 
-  background: #4CAF50;
-  cursor: pointer;
+	
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%; 
+	background: #4CAF50;
+	cursor: pointer;
+	
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #4CAF50;
-  cursor: pointer;
+	
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #4CAF50;
+	cursor: pointer;
+	
+}
+
+.delayButton{
+	
+	position: absolute;
+	
+	top: 50vh;
+	
+	right: 20px;
+	
+	font-size: 60px;
+	
 }
 
 /* Tags */

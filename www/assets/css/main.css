@@ -23,11 +23,31 @@ body{
 	
 }
 
+button{
+	
+	background: rgb(0, 0, 0, 0);
+	
+	padding: 0px;
+	
+	border: none;
+	
+}
+
 /* Other */
 
 *{
 	
 	font-family: roboto;
+	
+	outline: none;
+	
+	-webkit-user-select: none;
+	
+	-moz-user-select: none;
+	
+	-ms-user-select: none;
+	
+	user-select: none;
 	
 }
 
