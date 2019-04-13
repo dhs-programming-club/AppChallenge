@@ -195,6 +195,14 @@
 	
 	font-size: 30px;
 	
+	transition: 0.5s;
+	
+}
+
+#menuClose:active{
+	
+	opacity: 0.5;
+	
 }
 
 /* Classes */
