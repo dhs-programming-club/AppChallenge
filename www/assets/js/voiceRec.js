@@ -35,7 +35,7 @@ window.addEventListener("load", function setupVoiceRecognition(){
 						
 					}, function(err){
 						
-						document.getElementById("microphoneButton").innerHTML = err;
+						document.getElementById("microphoneError").innerHTML = err;
 						
 					}, settings);
 					
@@ -43,7 +43,7 @@ window.addEventListener("load", function setupVoiceRecognition(){
 				
 			}, function(err){
 				
-				console.error(err);
+				document.getElementById("microphoneError").innerHTML = err;
 				
 			});
 			
