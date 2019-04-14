@@ -13,41 +13,61 @@ window.addEventListener("load", function setupVoiceRecognition(){
 	
 	if(inCordova){
 		
-		document.getElementById("microphoneButton").addEventListener("click", function(){
+		try{
 			
-			window.plugins.speechRecognition.isRecognitionAvailable(function(available){
+			document.getElementById("microphoneButton").addEventListener("click", function(){
 				
-				if(available){
+				window.plugins.speechRecognition.isRecognitionAvailable(function(available){
 					
-					window.plugins.speechRecognition.startListening(async function(result){
+					if(available){
 						
-						words = convertToArray(result);
+						document.getElementById("microphoneButton").className = "activeMicrophone";
 						
-						for(var i = 0; i < words.length; i++){
+						window.plugins.speechRecognition.startListening(async function(result){
 							
-							document.getElementById("output").innerHTML = words[i];
+							document.getElementById("microphoneButton").className = "";
 							
-							await sleep(wordDelay);
+							words = convertToArray(result);
 							
-						}
+							for(var i = 0; i < words.length; i++){
+								
+								document.getElementById("output").innerHTML = words[i];
+								
+								await sleep(wordDelay);
+								
+							}
+							
+							document.getElementById("output").innerHTML = "";
+							
+						}, function(err){
+							
+							document.getElementById("microphoneError").innerHTML = err;
+							
+						}, settings);
 						
-						document.getElementById("output").innerHTML = "";
-						
-					}, function(err){
-						
-						document.getElementById("microphoneError").innerHTML = err;
-						
-					}, settings);
+					}
 					
-				}
-				
-			}, function(err){
-				
-				document.getElementById("microphoneError").innerHTML = err;
+					else{
+						
+						document.getElementById("microphoneError").innerHTML = "recognition not available";
+						
+					}
+					
+				}, function(err){
+					
+					document.getElementById("microphoneError").innerHTML = err;
+					
+				});
 				
 			});
 			
-		});
+		}
+		
+		catch(err){
+			
+			document.getElementById("microphoneError").innerHTML = err;
+			
+		}
 		
 	}
 	
