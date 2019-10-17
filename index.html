@@ -23,6 +23,8 @@
 
 <!-- JS -->
 
+<script src="assets/js/jquery-3.4.1.min.js"></script>
+
 <script src="assets/js/index.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/voiceRec.js"></script>
@@ -41,15 +43,15 @@
 
 	<button id="microphoneButton"><i class="fa fa-microphone"></i></button>
 
-	<p id="microphoneError">ijfwiojf</p>
+	<p id="microphoneError"></p>
 
-	<p id="output">wewefweioff</p>
+	<p id="output"></p>
 
 	<button id="menuButton" onclick="openMenu();"><i class="refButton fa fa-bars"></i></button>
 
 	<input id="textInput" type="text" onkeypress="enterTextInput(event);" onkeyup="updateTextInput(this);"></input>
 
-	<button id="transcriptButton"><i class="refButton fa fa-scroll"></i></button>
+	<button id="transcriptButton" onclick="toggleTranscriptView();"><i class="refButton fa fa-scroll"></i></button>
 
 	<div id="transcriptView">
 
@@ -57,17 +59,21 @@
 
 			<hr class="hr1"/>
 
+			<br/>
+
 			<h3>Speech to Text</h3>
 
 			<hr class="hr2"/>
 
-			<p>wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</p>
+			<p id="speechTranscriptOutput"></p>
+
+			<br/>
 
 			<h3>Text to Speech</h3>
 
 			<hr class="hr2"/>
 
-			<p></p>
+			<p id="textTranscriptOutput"></p>
 
 	</div>
 

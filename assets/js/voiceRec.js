@@ -27,6 +27,7 @@ window.onload = function(){
   		for(var i = 0; i < words.length; i++){
 
   			document.getElementById("output").innerHTML = words[i];
+        speechTranscript += words[i] + " ";
   			await sleep(wordDelay);
 
   		}

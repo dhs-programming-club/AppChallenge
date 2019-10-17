@@ -30,3 +30,27 @@ function convertToArray(str){
 	return endpoint;
 
 }
+
+function toggleTranscriptView(){
+
+  if(textTranscript == ""){
+    document.getElementById("textTranscriptOutput").innerHTML = "Nothing typed yet";
+  }
+  else{
+    document.getElementById("textTranscriptOutput").innerHTML = textTranscript;
+  }
+
+  if(speechTranscript == ""){
+    document.getElementById("speechTranscriptOutput").innerHTML = "Nothing said yet";
+  }
+  else{
+    document.getElementById("speechTranscriptOutput").innerHTML = speechTranscript;
+  }
+
+  $(document).ready(function(){
+
+    $("#transcriptView").slideToggle(750);
+
+  });
+
+}
