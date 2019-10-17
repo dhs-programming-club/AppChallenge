@@ -28,6 +28,7 @@ function enterTextInput(keyPressed){
 
 function speak(textToSpeak){
 
-  //ToDo
+  msg = new SpeechSynthesisUtterance(textToSpeak);
+  window.speechSynthesis.speak(msg);
 
 }
