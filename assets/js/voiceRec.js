@@ -1,74 +1,78 @@
 
 var wordDelay = parseInt(localStorage.getItem("wordDelay"));
 
-if('webkitSpeechRecognition' in window){
+window.onload = function(){
 
-	var message = document.querySelector('#output');
-	var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-	var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
-	var grammar = '#JSGF V1.0;'
-	var recognition = new SpeechRecognition();
-	var speechRecognitionList = new SpeechGrammarList();
+  if('webkitSpeechRecognition' in window){
 
-	speechRecognitionList.addFromString(grammar, 1);
+  	var message = document.querySelector('#output');
+  	var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+  	var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+  	var grammar = '#JSGF V1.0;'
+  	var recognition = new SpeechRecognition();
+  	var speechRecognitionList = new SpeechGrammarList();
 
-	recognition.grammars = speechRecognitionList;
-	recognition.lang = 'en-US';
-	recognition.interimResults = false;
-	recognition.onresult = async function(event) {
+  	speechRecognitionList.addFromString(grammar, 1);
 
-		document.getElementById("microphoneButton").className = "";
-		var last = event.results.length - 1;
-		var command = event.results[last][0].transcript;
-		words = convertToArray(command);
+  	recognition.grammars = speechRecognitionList;
+  	recognition.lang = 'en-US';
+  	recognition.interimResults = false;
+  	recognition.onresult = async function(event) {
 
-		for(var i = 0; i < words.length; i++){
+  		document.getElementById("microphoneButton").className = "";
+  		var last = event.results.length - 1;
+  		var command = event.results[last][0].transcript;
+  		words = convertToArray(command);
 
-			document.getElementById("output").innerHTML = words[i];
-			await sleep(wordDelay);
+  		for(var i = 0; i < words.length; i++){
 
-		}
+  			document.getElementById("output").innerHTML = words[i];
+  			await sleep(wordDelay);
 
-		document.getElementById("output").innerHTML = "";
+  		}
 
-	};
-	recognition.onspeechend = function() {
+  		document.getElementById("output").innerHTML = "";
 
-		recognition.stop();
-		document.getElementById("microphoneButton").className = "";
+  	};
+  	recognition.onspeechend = function() {
 
-	};
-	recognition.onerror = function(event) {
+  		recognition.stop();
+  		document.getElementById("microphoneButton").className = "";
 
-		document.getElementById("microphoneButton").className = "";
-		//document.getElementById("output").value = 'Error occurred in recognition : ' + event.error;
+  	};
+  	recognition.onerror = function(event) {
 
-	}
+  		document.getElementById("microphoneButton").className = "";
+  		//document.getElementById("output").value = 'Error occurred in recognition : ' + event.error;
 
-	document.querySelector('#microphoneButton').addEventListener('click', function(){
+  	}
 
-		if(document.getElementById("microphoneButton").className == "activeMicrophone"){
+  	document.querySelector('#microphoneButton').addEventListener('click', function(){
 
-			recognition.stop();
+  		if(document.getElementById("microphoneButton").className == "activeMicrophone"){
 
-			document.getElementById("microphoneButton").className = "";
+  			recognition.stop();
 
-		}
+  			document.getElementById("microphoneButton").className = "";
 
-		else{
+  		}
 
-			recognition.start();
+  		else{
 
-			document.getElementById("microphoneButton").className = "activeMicrophone";
+  			recognition.start();
 
-		}
+  			document.getElementById("microphoneButton").className = "activeMicrophone";
 
-	});
+  		}
 
-}
+  	});
 
-else{
+  }
 
-	document.getElementById("microphoneError").innerHTML = 'Your browser does not support voice recognition';
+  else{
+
+  	document.getElementById("microphoneError").innerHTML = 'Your browser does not support voice recognition';
+
+  }
 
 }

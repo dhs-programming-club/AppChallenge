@@ -23,10 +23,10 @@
 
 <!-- JS -->
 
-<script type="text/javascript" src="cordova.js"></script>
 <script src="assets/js/index.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/voiceRec.js"></script>
+<script src="assets/js/textToSpeech.js"></script>
 <script src="assets/js/memory.js"></script>
 
 <!-- CSS -->
@@ -41,11 +41,35 @@
 
 	<button id="microphoneButton"><i class="fa fa-microphone"></i></button>
 
-	<p id="microphoneError"></p>
+	<p id="microphoneError">ijfwiojf</p>
 
-	<p id="output"></p>
+	<p id="output">wewefweioff</p>
 
-	<button id="menuButton" onclick="openMenu();"><i class="fa fa-bars"></i></button>
+	<button id="menuButton" onclick="openMenu();"><i class="refButton fa fa-bars"></i></button>
+
+	<input id="textInput" type="text" onkeypress="enterTextInput(event);" onkeyup="updateTextInput(this);"></input>
+
+	<button id="transcriptButton"><i class="refButton fa fa-scroll"></i></button>
+
+	<div id="transcriptView">
+
+			<h1>Transcripts</h1>
+
+			<hr class="hr1"/>
+
+			<h3>Speech to Text</h3>
+
+			<hr class="hr2"/>
+
+			<p>wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</p>
+
+			<h3>Text to Speech</h3>
+
+			<hr class="hr2"/>
+
+			<p></p>
+
+	</div>
 
 	<nav id="sideMenu">
 
