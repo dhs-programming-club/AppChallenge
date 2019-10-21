@@ -24,6 +24,8 @@ window.onload = function(){
   		var command = event.results[last][0].transcript;
   		words = convertToArray(command);
 
+      console.log(words);
+
   		for(var i = 0; i < words.length; i++){
 
   			document.getElementById("output").innerHTML = words[i];
@@ -53,7 +55,6 @@ window.onload = function(){
   		if(document.getElementById("microphoneButton").className == "activeMicrophone"){
 
   			recognition.stop();
-
   			document.getElementById("microphoneButton").className = "";
 
   		}
@@ -61,7 +62,6 @@ window.onload = function(){
   		else{
 
   			recognition.start();
-
   			document.getElementById("microphoneButton").className = "activeMicrophone";
 
   		}

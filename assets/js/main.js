@@ -54,3 +54,13 @@ function toggleTranscriptView(){
   });
 
 }
+
+function closeTranscriptView(){
+
+  $(document).ready(function(){
+
+    $("#transcriptView").slideUp(750);
+
+  });
+
+}

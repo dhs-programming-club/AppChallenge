@@ -225,6 +225,31 @@
 
 }
 
+#closeTranscriptView{
+
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	color: black;
+	font-size: 30px;
+	transition: 0.5s;
+
+}
+
+#closeTranscriptView:active{
+
+	opacity: 0.5;
+
+}
+
+#titleHeader{
+
+	font-family: roboto-light;
+	text-align: center;
+	margin-top: 30px;
+
+}
+
 /* Classes */
 
 .activeMicrophone{
@@ -312,6 +337,12 @@
 
 		width: 70vw;
 		left: 15vw;
+
+	}
+
+	#titleHeader{
+
+		font-size: 22px;
 
 	}
 
