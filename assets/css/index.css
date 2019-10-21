@@ -244,9 +244,11 @@
 
 #titleHeader{
 
+	position: absolute;
 	font-family: roboto-light;
 	text-align: center;
-	margin-top: 30px;
+	top: 10px;
+	width: 100vw;
 
 }
 
@@ -343,6 +345,7 @@
 	#titleHeader{
 
 		font-size: 22px;
+		top: 20px;
 
 	}
 
