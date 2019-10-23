@@ -64,3 +64,32 @@ function closeTranscriptView(){
   });
 
 }
+
+function extractMiddle(str) {
+
+    var position;
+    var length;
+
+    if(str.length % 2 == 1) {
+        position = str.length / 2;
+        length = 1;
+    }
+    else {
+        position = str.length / 2 - 1;
+        length = 2;
+    }
+
+    return [str.substring(position, position + length), position];
+}
+
+function makeRedLetter(ele){
+
+  eleText = ele.innerHTML;
+  middle = extractMiddle(eleText.substring())[0];
+  middlePosition = Math.floor(extractMiddle(eleText.substring())[1])
+  middle.length == 2 ? middle = middle.substring(0, 1) : null;
+  console.log(middle + " : " + middlePosition);
+  ele.innerHTML = ele.innerHTML.substring(0, middlePosition) + '<span style="color: red;">' + middle
+  + '</span>' + ele.innerHTML.substring(middlePosition + 1, ele.innerHTML.length);
+
+}

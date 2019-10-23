@@ -325,6 +325,12 @@
 
 }
 
+.onlyOnMobile{
+
+	display: none;
+
+}
+
 /* Tags */
 
 /* Other */
@@ -344,12 +350,18 @@
 
 	#titleHeader{
 
-		font-size: 22px;
-		top: 20px;
+		font-size: 25px;
+		top: 5px;
 
 	}
 
 	/* Classes */
+
+	.onlyOnMobile{
+
+		display: block;
+
+	}
 
 	/* Tags */
 

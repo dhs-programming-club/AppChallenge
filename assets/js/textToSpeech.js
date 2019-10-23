@@ -14,6 +14,7 @@ function clearTextInput(text){
 
   textTranscript += text;
   speak(text);
+  document.getElementById("textInput").placeholder = "";
   document.getElementById("textInput").value = null;
 
 }

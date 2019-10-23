@@ -24,12 +24,11 @@ window.onload = function(){
   		var command = event.results[last][0].transcript;
   		words = convertToArray(command);
 
-      console.log(words);
-
   		for(var i = 0; i < words.length; i++){
 
   			document.getElementById("output").innerHTML = words[i];
         speechTranscript += words[i] + " ";
+        makeRedLetter(document.getElementById("output"));
   			await sleep(wordDelay);
 
   		}
