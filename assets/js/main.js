@@ -93,3 +93,13 @@ function makeRedLetter(ele){
   + '</span>' + ele.innerHTML.substring(middlePosition + 1, ele.innerHTML.length);
 
 }
+
+document.addEventListener('click', function(event) {
+  var isClickInside = document.getElementById("sideMenu").contains(event.target);
+
+  if (!isClickInside) {
+
+    closeMenu();
+
+  }
+});
